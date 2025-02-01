@@ -1,26 +1,31 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0"
-    />
-    <title>Dota 2 Analytics</title>
-  </head>
-  <body>
-    <h1>Welcome to Dota 2 Analytics</h1>
-    <p>Search for a hero:</p>
-    <form
-      action="/hero/Pudge"
-      method="get"
-    >
-      <input
-        type="text"
-        name="hero_name"
-        placeholder="Enter hero name"
-      />
-      <button type="submit">Search</button>
-    </form>
-  </body>
-</html>
+{% extends "base.html" %} {% block content %}
+<h1>Welcome to Dota 2 Analytics</h1>
+
+<h2>Search for a Hero</h2>
+<form
+  action="/hero"
+  method="get"
+>
+  <input
+    type="text"
+    name="hero_name"
+    placeholder="Enter hero name"
+    required
+  />
+  <button type="submit">Search Hero</button>
+</form>
+
+<h2>Search for a Player</h2>
+<form
+  action="/player"
+  method="get"
+>
+  <input
+    type="text"
+    name="personaname"
+    placeholder="Enter player name"
+    required
+  />
+  <button type="submit">Search Player</button>
+</form>
+{% endblock %}

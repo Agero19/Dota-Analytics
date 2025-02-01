@@ -1,0 +1,20 @@
+{% extends "base.html" %} {% block content %}
+<h1>{{ player.profile.personaname }}</h1>
+<img
+  src="{{ player.profile.avatarfull }}"
+  alt="{{ player.profile.personaname }}'s Avatar"
+/>
+<p>Steam ID: {{ player.profile.steamid }}</p>
+<p>Total Wins: {{ wl.win }}</p>
+<p>Total Losses: {{ wl.lose }}</p>
+<p>Win Rate: {{ (wl.win / (wl.win + wl.lose) * 100) | round(2) }}%</p>
+
+<h2>Top Heroes</h2>
+<ul>
+  {% for hero_name, count in top_heroes.items() %}
+  <li>{{ hero_name }} ({{ count }} matches)</li>
+  {% endfor %}
+</ul>
+
+<a href="/">Back to Home</a>
+{% endblock %}
