@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>Hero Stats - {{ hero.localized_name }}</title>
+  </head>
+  <body>
+    <h1>{{ hero.localized_name }} Stats</h1>
+    <p>Attack Type: {{ hero.attack_type }}</p>
+    <p>Roles: {{ hero.roles|join(', ') }}</p>
+    <p>Base Health: {{ hero.base_health }}</p>
+    <p>Base Mana: {{ hero.base_mana }}</p>
+    <a href="/">Back to Home</a>
+  </body>
+</html>
